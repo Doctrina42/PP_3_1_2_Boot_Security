@@ -63,6 +63,10 @@
   </table>
 
   <div class="text-center">
+    <a th:href="@{/admin/{id}/edit(id=${user.getId()})}" class="btn btn-success">Изменить</a>
+    <form action="/admin/user/">
+      <input type="submit" value="Пользователи" class="btn btn-primary">
+    </form>
     <form action="/logout">
       <input type="submit" value="Выйти" class="btn btn-danger">
     </form>

@@ -1,11 +1,94 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
-<head>
-    <title>Spring Security Example</title>
-</head>
-<body>
-<h1>Welcome to Index PAGE!</h1>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="https://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>New User</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            font-family: Arial, sans-serif;-->
+<!--        }-->
+<!--        form {-->
+<!--            max-width: 300px;-->
+<!--            margin: 0 auto;-->
+<!--        }-->
+<!--        label {-->
+<!--            display: block;-->
+<!--            margin-top: 10px;-->
+<!--        }-->
+<!--        input[type="text"], input[type="password"], select {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            margin-top: 5px;-->
+<!--        }-->
+<!--        input[type="submit"] {-->
+<!--            width: 100%;-->
+<!--            padding: 10px;-->
+<!--            margin-top: 10px;-->
+<!--            background-color: #4CAF50;-->
+<!--            color: white;-->
+<!--            border: none;-->
+<!--            cursor: pointer;-->
+<!--        }-->
+<!--        input[type="submit"]:hover {-->
+<!--            background-color: #45a049;-->
+<!--        }-->
+<!--        .form-control {-->
+<!--            display: block;-->
+<!--            width: 100%;-->
+<!--            height: calc(2.25rem + 2px);-->
+<!--            padding: .375rem .75rem;-->
+<!--            font-size: 1rem;-->
+<!--            line-height: 1.5;-->
+<!--            color: #495057;-->
+<!--            background-color: #fff;-->
+<!--            background-clip: padding-box;-->
+<!--            border: 1px solid #ced4da;-->
+<!--            border-radius: .25rem;-->
+<!--            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;-->
+<!--        }-->
+<!--        .form-control:focus {-->
+<!--            color: #495057;-->
+<!--            background-color: #fff;-->
+<!--            border-color: #80bdff;-->
+<!--            outline: 0;-->
+<!--            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
 
+<!--<form th:method="POST" th:action="@{/admin/user}" th:object="${user}">-->
 
-</body>
-</html>
+<!--    <label for="username">Введите логин: </label>-->
+<!--    <input type="text" th:field="*{username}" id="username" class="form-control"/>-->
+<!--    <br>-->
+
+<!--    <label for="firstName">Введите имя: </label>-->
+<!--    <input type="text" th:field="*{firstName}" id="firstName" class="form-control"/>-->
+<!--    <br>-->
+
+<!--    <label for="lastName">Введите фамилию: </label>-->
+<!--    <input type="text" th:field="*{lastName}" id="lastName" class="form-control"/>-->
+<!--    <br>-->
+
+<!--    <label for="yearOfBirth">Введите год рождения: </label>-->
+<!--    <input type="text" th:field="*{yearOfBirth}" id="yearOfBirth" class="form-control"/>-->
+<!--    <br>-->
+
+<!--    <label for="balance">Введите баланс: </label>-->
+<!--    <input type="text" th:field="*{balance}" id="balance" class="form-control"/>-->
+<!--    <br>-->
+
+<!--    <label for="email">Введите email: </label>-->
+<!--    <input type="text" th:field="*{email}" id="email" class="form-control"/>-->
+<!--    <br>-->
+
+<!--    <label for="password">Введите пароль: </label>-->
+<!--    <input type="text" th:field="*{password}" id="password" class="form-control"/>-->
+<!--    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>-->
+
+<!--    <br><br>-->
+
+<!--    <label for="role-select"></label><select id="role-select" required class="form-control" th:field="*{roles}" multiple="multiple" >-->
+<!--    <option th:each="role : ${role}"-->
+<!--            th:field="*{roles}"-->

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Users</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      padding: 20px; text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Список пользователей</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>Логин</th>
+      <th>Действие</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="u : ${user}">
+      <td>
+        <a th:href="@{/admin/{id}(id=${u.getId()})}" th:text="${u.getUsername()}"></a>
+      </td>
+      <td>
+        <form th:method="DELETE" th:action="@{/admin/{id}(id=${u.getId()})}">
+          <input type="submit" value="Удалить" class="btn btn-danger">
+        </form>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<a href="/admin/create-new-user" class="btn btn-primary">Создать нового пользователя</a>
+<form action="/logout">
+  <input type="submit" value="Выйти" class="btn btn-danger">
+</form>
+
+</body>
+</html>
